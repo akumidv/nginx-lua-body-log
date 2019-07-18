@@ -10,7 +10,7 @@ RUN mkdir -p /run/nginx
 
 # Add our nginx conf
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./server-log-body.conf.example /etc/nginx/conf.d/server-log-body.conf.example
+COPY ./server.conf.example /etc/nginx/conf.d/server.conf.example
 
 
 CMD ["nginx"]
