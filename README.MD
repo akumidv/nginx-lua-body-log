@@ -56,7 +56,20 @@ server {
 
 Replace http://iondv:8888 to your url.
 
-Start `docker run -v /workspace/nginx-lua/iondv.conf.example:/etc/nginx/conf.d/default.conf:ro -v body_log:/var/log/nginx -p "80:80" --link iondv --rm --name nginx_lua nginx_lua`, where `--link iondv` docker name - skip if you hav url or replace to your docker name.
+Start 
+```bash
+docker run \
+   -v /workspace/nginx-lua/iondv.conf.example:/etc/nginx/conf.d/default.conf:ro \
+   -v body_log:/var/log/nginx \
+   -p "80:80" \
+   --link iondv \
+   -d \
+   --name nginx_lua \
+   nginx_lua
+```
+Where:
+* `--link iondv` docker name - skip if you hav url or replace to your docker name.
+* `/workspace/nginx-lua/` - path to nginx server config file from example.
 
 On ubuntu `cat /var/lib/docker/volumes/body_log/_data/req-resp.log` fog reques/response log.
 
