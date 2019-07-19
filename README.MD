@@ -1,10 +1,6 @@
 ## About
 Nginx proxy body logger
 
-## Build
-
-`docker build -t nginx_lua .`
-
 ## Run
 
 Create server.conf from example
@@ -54,7 +50,7 @@ server {
 
 ```
 
-Replace http://iondv:8888 to your url.
+Replace http://iondv:8888 to your URL.
 
 Start 
 ```bash
@@ -65,13 +61,17 @@ docker run \
    --link iondv \
    -d \
    --name nginx_lua \
-   nginx_lua
+   akuminov/nginx-lua-body-log
 ```
 Where:
-* `--link iondv` docker name - skip if you have url or replace to your docker name.
+* `--link iondv` docker name - skip if you have an external URL or replace to your docker name.
 * `/workspace/nginx-lua/server.conf` - path to nginx server config file from example.
 
-On ubuntu `cat /var/lib/docker/volumes/body_log/_data/req-resp.log` fog request/response log.
+On ubuntu `cat /var/lib/docker/volumes/body_log/_data/req-resp.log` for request/response log.
 
-# Source 
+## Build
+
+`docker build -t nginx_lua .`
+
+## Source 
 https://gist.github.com/morhekil/1ff0e902ed4de2adcb7a
