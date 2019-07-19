@@ -50,7 +50,7 @@ server {
     proxy_pass http://iondv:8888;
   }
   access_log  /var/log/nginx/req-resp.log bodylog;
-
+}
 
 ```
 
@@ -71,7 +71,7 @@ Where:
 * `--link iondv` docker name - skip if you have url or replace to your docker name.
 * `/workspace/nginx-lua/server.conf` - path to nginx server config file from example.
 
-On ubuntu `cat /var/lib/docker/volumes/body_log/_data/req-resp.log` fog reques/response log.
+On ubuntu `cat /var/lib/docker/volumes/body_log/_data/req-resp.log` fog request/response log.
 
 # Source 
 https://gist.github.com/morhekil/1ff0e902ed4de2adcb7a
