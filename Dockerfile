@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:latest
 
 RUN apk add --no-cache nginx-mod-http-lua
 
@@ -11,6 +11,5 @@ RUN mkdir -p /run/nginx
 # Add our nginx conf
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./server.conf.example /etc/nginx/conf.d/server.conf.example
-
 
 CMD ["nginx"]
